@@ -1,0 +1,406 @@
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~
+$ cd mystory
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory
+$ ls
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory
+$ git init
+Initialized empty Git repository in C:/Users/saba2/mystory/.git/
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory (master)
+$ pwd
+/c/Users/saba2/mystory
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .swp
+        characters.txt
+        story.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory (master)
+$ git add "characters.txt"
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   characters.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .swp
+        story.txt
+
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory (master)
+$ del *.swp
+bash: del: command not found
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory (master)
+$ delete *.swp
+bash: delete: command not found
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory (master)
+$ remove *.swp
+bash: remove: command not found
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   characters.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        story.txt
+
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   characters.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        story.txt
+
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory (master)
+$ git diff --staged
+diff --git a/characters.txt b/characters.txt
+new file mode 100644
+index 0000000..ea75179
+--- /dev/null
++++ b/characters.txt
+@@ -0,0 +1 @@
++this is for pc an npc
+\ No newline at end of file
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory (master)
+$ git add "story.txt"
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory (master)
+$ git diff --staged
+diff --git a/characters.txt b/characters.txt
+new file mode 100644
+index 0000000..ea75179
+--- /dev/null
++++ b/characters.txt
+@@ -0,0 +1 @@
++this is for pc an npc
+\ No newline at end of file
+diff --git a/story.txt b/story.txt
+new file mode 100644
+index 0000000..c749d23
+--- /dev/null
++++ b/story.txt
+@@ -0,0 +1,2 @@
++Write story here.
++second line added.
+\ No newline at end of file
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   characters.txt
+        new file:   story.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   story.txt
+
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory (master)
+$ git add "story.txt"
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory (master)
+$ git commit -m "first commit"
+[master (root-commit) 9513fd5] first commit
+ 2 files changed, 5 insertions(+)
+ create mode 100644 characters.txt
+ create mode 100644 story.txt
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory (master)
+$ git log
+commit 9513fd55f31bbad201fa775a4fed0e67045b9e70 (HEAD -> master)
+Author: SabaHilal <saba21hilal@gmail.com>
+Date:   Thu May 7 13:07:34 2020 +0530
+
+    first commit
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory (master)
+$ git checkout 9513f
+Note: switching to '9513f'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 9513fd5 first commit
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory ((9513fd5...))
+$ git branch newbranch
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory ((9513fd5...))
+$ git branch
+* (HEAD detached at 9513fd5)
+  master
+  newbranch
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory ((9513fd5...))
+$ git log
+commit 9513fd55f31bbad201fa775a4fed0e67045b9e70 (HEAD, newbranch, master)
+Author: SabaHilal <saba21hilal@gmail.com>
+Date:   Thu May 7 13:07:34 2020 +0530
+
+    first commit
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory ((9513fd5...))
+$ git branch newbranch
+fatal: A branch named 'newbranch' already exists.
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory ((9513fd5...))
+$ git checkout newbranch
+Switched to branch 'newbranch'
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory (newbranch)
+$ git branch
+  master
+* newbranch
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory (newbranch)
+$ git log
+commit 9513fd55f31bbad201fa775a4fed0e67045b9e70 (HEAD -> newbranch, master)
+Author: SabaHilal <saba21hilal@gmail.com>
+Date:   Thu May 7 13:07:34 2020 +0530
+
+    first commit
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory (newbranch)
+$ git status
+On branch newbranch
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   story.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory (newbranch)
+$ git add story.txt
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory (newbranch)
+$ git status
+On branch newbranch
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   story.txt
+
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory (newbranch)
+$ git commit -m "new commit"
+[newbranch 731e8b0] new commit
+ 1 file changed, 1 insertion(+)
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory (newbranch)
+$ git status
+On branch newbranch
+nothing to commit, working tree clean
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory (newbranch)
+$ git log
+commit 731e8b02f5c1ac977c4cfbd44fe3c333c3139d69 (HEAD -> newbranch)
+Author: SabaHilal <saba21hilal@gmail.com>
+Date:   Thu May 7 13:24:31 2020 +0530
+
+    new commit
+
+commit 9513fd55f31bbad201fa775a4fed0e67045b9e70 (master)
+Author: SabaHilal <saba21hilal@gmail.com>
+Date:   Thu May 7 13:07:34 2020 +0530
+
+    first commit
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory (newbranch)
+$ git diff master newbranch
+diff --git a/story.txt b/story.txt
+index ee43a7b..eb63c12 100644
+--- a/story.txt
++++ b/story.txt
+@@ -2,3 +2,4 @@ Write story here.
+ second line added.
+ Add story details
+
++More lines added
+\ No newline at end of file
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory (newbranch)
+$ git remote add origin https://github.com/SabaHilal/C67.git
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory (newbranch)
+$ push origin master
+bash: push: command not found
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory (newbranch)
+$ git remote add C67 https://github.com/SabaHilal/C67.git
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory (newbranch)
+$ git push -u C67
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (7/7), 591 bytes | 118.00 KiB/s, done.
+Total 7 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/SabaHilal/C67.git
+ * [new branch]      newbranch -> newbranch
+Branch 'newbranch' set up to track remote branch 'newbranch' from 'C67'.
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory (newbranch)
+$ git pull C67 master
+fatal: couldn't find remote ref master
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory (newbranch)
+$ git pull C67
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/SabaHilal/C67
+   731e8b0..5284cf0  newbranch  -> C67/newbranch
+Updating 731e8b0..5284cf0
+Fast-forward
+ characters.txt | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory (newbranch)
+$ git status
+On branch newbranch
+Your branch is up to date with 'C67/newbranch'.
+
+nothing to commit, working tree clean
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory (newbranch)
+$ ls
+characters.txt  story.txt
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory (newbranch)
+$ git clone https://github.com/SabaHilal/Monkey-Chunky.git
+Cloning into 'Monkey-Chunky'...
+remote: Enumerating objects: 37, done.
+remote: Counting objects: 100% (37/37), done.
+remote: Compressing objects: 100% (21/21), done.
+remote: Total 37 (delta 15), reused 37 (delta 15), pack-reused 0
+Unpacking objects: 100% (37/37), done.
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory (newbranch)
+$ ls
+characters.txt  Monkey-Chunky/  story.txt
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory (newbranch)
+$ git status
+On branch newbranch
+Your branch is up to date with 'C67/newbranch'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Monkey-Chunky/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory (newbranch)
+$ cd Monkey-Chunky
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory/Monkey-Chunky (master)
+$ ls
+App.js    assets/          components/  package.json
+app.json  babel.config.js  localdb.js   README.md
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory/Monkey-Chunky (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   App.js
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory/Monkey-Chunky (master)
+$ git add .
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory/Monkey-Chunky (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   App.js
+
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory/Monkey-Chunky (master)
+$ git commit -m "round input box"
+[master 387ede0] round input box
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory/Monkey-Chunky (master)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 379 bytes | 126.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/SabaHilal/Monkey-Chunky.git
+   1e83a07..387ede0  master -> master
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory/Monkey-Chunky (master)
+$ ^C
+
+saba2@LAPTOP-KLPV6LP7 MINGW64 ~/mystory/Monkey-Chunky (master)
+$
